@@ -4,49 +4,49 @@ from search import search_schedules
 
 # Exemplu de date de program
 schedules = [
-    Schedule(1, "TI-231", "Mathematics", "John Doe", "08:00", "09:30", "Even", "Building A", "Monday"),
-    Schedule(2, "TI-232", "Programming", "Mary Smith", "10:00", "11:30", "Odd", "Building B", "Tuesday"),
-    Schedule(3, "TI-233", "Physics", "Andrew Johnson", "12:00", "13:30", "Even", "Building C", "Wednesday"),
-    Schedule(4, "TI-234", "Chemistry", "Laura Adams", "14:00", "15:30", "Odd", "Building D", "Thursday"),
-    Schedule(5, "TI-235", "Biology", "Emma Brown", "16:00", "17:30", "Even", "Building E", "Friday"),
-    Schedule(6, "TI-236", "Statistics", "James Smith", "08:00", "09:30", "Odd", "Building F", "Monday"),
-    Schedule(7, "TI-231", "English", "Emily White", "09:30", "11:00", "Even", "Building A", "Tuesday"),
-    Schedule(8, "TI-232", "History", "Michael Green", "11:00", "12:30", "Odd", "Building B", "Wednesday"),
-    Schedule(9, "TI-233", "Geography", "Sarah Blue", "13:30", "15:00", "Even", "Building C", "Thursday"),
-    Schedule(10, "TI-234", "Art", "Oliver Grey", "15:00", "16:30", "Odd", "Building D", "Friday"),
+    Schedule(1, "TI-231", "Matematica", "Ion Popescu", "08:00", "09:30", "Pară", "Clădirea A", "Luni"),
+    Schedule(2, "TI-232", "Programare", "Maria Ionescu", "10:00", "11:30", "Impară", "Clădirea B", "Marți"),
+    Schedule(3, "TI-233", "Fizica", "Andrei Georgescu", "12:00", "13:30", "Pară", "Clădirea C", "Miercuri"),
+    Schedule(4, "TI-234", "Chimie", "Laura Dobre", "14:00", "15:30", "Impară", "Clădirea D", "Joi"),
+    Schedule(5, "TI-235", "Biologie", "Emilia Vasilescu", "16:00", "17:30", "Pară", "Clădirea E", "Vineri"),
+    Schedule(6, "TI-236", "Statistica", "Radu Iliescu", "08:00", "09:30", "Impară", "Clădirea F", "Luni"),
+    Schedule(7, "TI-231", "Engleză", "Elena Grigorescu", "09:30", "11:00", "Pară", "Clădirea A", "Marți"),
+    Schedule(8, "TI-232", "Istorie", "Mihai Florescu", "11:00", "12:30", "Impară", "Clădirea B", "Miercuri"),
+    Schedule(9, "TI-233", "Geografie", "Sorina Albu", "13:30", "15:00", "Pară", "Clădirea C", "Joi"),
+    Schedule(10, "TI-234", "Artă", "Olivia Negru", "15:00", "16:30", "Impară", "Clădirea D", "Vineri"),
 ]
 
 def main(page: ft.Page):
-    page.title = "Schedule Search"
+    page.title = "Căutare Orar"
 
-    group_input = ft.Column()
-    subject_input = ft.TextField(label="Subject", width=200)
-    teacher_input = ft.TextField(label="Teacher", width=200)
+    subject_input = ft.TextField(label="Materie", width=200)
+    teacher_input = ft.TextField(label="Profesor", width=200)
 
-    # Checkbox pentru grupe
+    # Checkbox pentru grupe (aranjate orizontal în `Row`)
     group_options = ["TI-231", "TI-232", "TI-233", "TI-234", "TI-235", "TI-236"]
     selected_groups = []
-
+    
+    group_input = ft.Row()  # Grupurile vor fi afișate orizontal
     for group in group_options:
         cb = ft.Checkbox(label=group, value=False)
         selected_groups.append(cb)
         group_input.controls.append(cb)
 
-    # Checkbox pentru tipul săptămânii
-    week_type_input = ft.Column()
-    week_type_options = ["Even", "Odd"]
+    # Checkbox pentru tipul săptămânii (aranjate orizontal în `Row`)
+    week_type_options = ["Pară", "Impară"]
     selected_week_types = []
-
+    
+    week_type_input = ft.Row()  # Tipurile săptămânii vor fi afișate orizontal
     for week_type in week_type_options:
         cb = ft.Checkbox(label=week_type, value=False)
         selected_week_types.append(cb)
         week_type_input.controls.append(cb)
 
-    # Checkbox pentru zilele săptămânii
-    day_input = ft.Column()
-    day_options = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    # Checkbox pentru zilele săptămânii (aranjate orizontal în `Row`)
+    day_options = ["Luni", "Marți", "Miercuri", "Joi", "Vineri"]
     selected_days = []
-
+    
+    day_input = ft.Row()  # Zilele săptămânii vor fi afișate orizontal
     for day in day_options:
         cb = ft.Checkbox(label=day, value=False)
         selected_days.append(cb)
@@ -93,14 +93,16 @@ def main(page: ft.Page):
 
         page.update()
 
+    # Adăugarea secțiunilor de input
     page.add(
         ft.Text("Alege grupele:"),
-        group_input,
+        group_input,  # Grupuri afișate orizontal
         ft.Text("Alege tipul săptămânii:"),
-        week_type_input,
+        week_type_input,  # Tipuri săptămână afișate orizontal
         ft.Text("Alege zilele săptămânii:"),
-        day_input,
+        day_input,  # Zile afișate orizontal
         search_button,
+        ft.Container(height=20),  # Spațiu între buton și rezultatele afișate
         results_container,
     )
 
