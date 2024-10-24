@@ -4,16 +4,43 @@ from search import search_schedules
 
 # Exemplu de date de program
 schedules = [
-    Schedule(1, "TI-231", "Matematica", "Ion Popescu", "08:00", "09:30", "Pară", "Clădirea A", "Luni"),
-    Schedule(2, "TI-232", "Programare", "Maria Ionescu", "10:00", "11:30", "Impară", "Clădirea B", "Marți"),
-    Schedule(3, "TI-233", "Fizica", "Andrei Georgescu", "12:00", "13:30", "Pară", "Clădirea C", "Miercuri"),
-    Schedule(4, "TI-234", "Chimie", "Laura Dobre", "14:00", "15:30", "Impară", "Clădirea D", "Joi"),
-    Schedule(5, "TI-235", "Biologie", "Emilia Vasilescu", "16:00", "17:30", "Pară", "Clădirea E", "Vineri"),
-    Schedule(6, "TI-236", "Statistica", "Radu Iliescu", "08:00", "09:30", "Impară", "Clădirea F", "Luni"),
-    Schedule(7, "TI-231", "Engleză", "Elena Grigorescu", "09:30", "11:00", "Pară", "Clădirea A", "Marți"),
-    Schedule(8, "TI-232", "Istorie", "Mihai Florescu", "11:00", "12:30", "Impară", "Clădirea B", "Miercuri"),
-    Schedule(9, "TI-233", "Geografie", "Sorina Albu", "13:30", "15:00", "Pară", "Clădirea C", "Joi"),
-    Schedule(10, "TI-234", "Artă", "Olivia Negru", "15:00", "16:30", "Impară", "Clădirea D", "Vineri"),
+
+    #orar ti-235 sapt impara
+    Schedule(1, "TI-231", "Ed.Fizica", "Tatiana Sport", "11:30", "13:00", "Impară", "Stadion", "Luni"),
+    Schedule(2, "TI-231", "Filozofie", "Antoci A.", "13:30", "15:00", "Impară", "3-613", "Luni"),
+    Schedule(3, "TI-231", "MN", "Struna V.", "15:15", "16:45", "Impară", "3-516", "Luni"),
+    Schedule(4, "TI-231", "CDE", "Cretu V.", "15:15", "16:45", "Impară", "3-3", "Marți"),
+    Schedule(5, "TI-231", "ASDN", "Turcan A.", "17:00", "18:30", "Impară", "3-3", "Marți"),
+    Schedule(6, "TI-231", "P00", "Gincu S.", "18:45", "20:15", "Impară", "3-3", "Marți"),
+    Schedule(7, "TI-231", "CDE", "Litra D.", "9:45", "13:00", "Impară", "3-406", "Miercuri"),
+    Schedule(8, "TI-231", "Dreptul", "Ursu V.", "13:30", "15:00", "Impară", "3-3", "Miercuri"),
+    Schedule(9, "TI-231", "POO", "Cebotari D.", "15:15", "16:45", "Impară", "3-512", "Miercuri"),
+    Schedule(10, "TI-231", "APA", "Scrob S.", "11:30", "13:00", "Impară", "3-114", "Joi"),
+    Schedule(11, "TI-231", "IAFPS", "Bagrin V.", "13:30", "15:00", "Impară", "3-519", "Joi"),
+    Schedule(12, "TI-231", "POO", "Cebotari D.", "15:15", "16:45", "Impară", "3-512", "Joi"),
+    Schedule(13, "TI-231", "APA", "Bagrin V.", "11:30", "13:00", "Impară", "3-3", "Vineri"),
+    Schedule(14, "TI-231", "MN", "Patiuc V.", "13:30", "15:00", "Impară", "3-3", "Vineri"),
+    Schedule(15, "TI-231", "Filozofia", "Antoci A.", "15:15", "16:45", "Impară", "3-3", "Vineri"),
+
+
+ #orar ti-235 sapt para
+
+ 
+    Schedule(16, "TI-231", "Filozofie", "Antoci A.", "13:30", "15:00", "Pară", "3-613", "Luni"),
+    Schedule(17, "TI-231", "ASDN", "Spatari A.", "15:15", "16:45", "Pară", "3-606", "Luni"),
+    Schedule(18, "TI-231", "CDE", "Cretu V.", "13:30", "16:45", "Pară", "3-3", "Marți"),
+    Schedule(19, "TI-231", "ASDN", "Turcan A.", "17:00", "18:30", "Pară", "3-3", "Marți"),
+    Schedule(20, "TI-231", "P00", "Gincu S.", "18:45", "20:15", "Pară", "3-3", "Marți"),
+    Schedule(21, "TI-231", "Dreptul", "Ursu V.", "13:30", "15:00", "Pară", "3-3", "Miercuri"),
+    Schedule(22, "TI-231", "POO", "Cebotari D.", "15:15", "16:45", "Pară", "3-512", "Miercuri"),
+    Schedule(23, "TI-231", "ASDN", "Ursu A.", "9:45", "11:15", "Pară", "3-518", "Joi"),
+    Schedule(24, "TI-231", "APA", "Scrob S.", "11:30", "13:00", "Pară", "3-114", "Joi"),
+    Schedule(25, "TI-231", "IAFPS", "Bagrin V.", "13:30", "15:00", "Pară", "3-519", "Joi"),
+    Schedule(26, "TI-231", "POO", "Cebotari D.", "15:15", "16:45", "Pară", "3-512", "Joi"),
+    Schedule(27, "TI-231", "APA", "Bagrin V.", "11:30", "13:00", "Pară", "3-3", "Vineri"),
+    Schedule(28, "TI-231", "MN", "Patiuc V.", "13:30", "15:00", "Pară", "3-3", "Vineri"),
+    Schedule(29, "TI-231", "Filozofia", "Antoci A.", "15:15", "16:45", "Pară", "3-3", "Vineri"),
+
 ]
 
 def main(page: ft.Page):
