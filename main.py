@@ -12,6 +12,9 @@ def main(page: ft.Page):
     subject_input = ft.TextField(label="Materie", width=200)
     teacher_input = ft.TextField(label="Profesor", width=200)
 
+    # Aranjarea câmpurilor pentru materie și profesor pe același rând
+    input_row = ft.Row(controls=[subject_input, teacher_input], spacing=10)
+
     group_options = ["TI-231", "TI-232", "TI-233", "TI-234", "TI-235", "TI-236"]
     selected_groups = []
     
@@ -78,6 +81,7 @@ def main(page: ft.Page):
         page.update()
 
     page.add(
+        input_row,  # Adăugăm rândul cu câmpurile pentru materie și profesor
         ft.Text("Selectați grupa:"),
         group_input,
         ft.Text("Selectați tipul săptămânii:"),
