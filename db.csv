@@ -1,4 +1,4 @@
-TI-235;Ed. Fizica;-;11:30;13:00;Impară;Sala de forță;Luni
+TI-235;Ed. Fizica;-;11:30;13:00;Impară;Stadion;Luni
 TI-235;Filozofia;Antoci. A;13:30;15:00;Impară;3-613;Luni
 TI-235;MN;Struna V.;15:25;16:45;Impară;3-516;Luni
 TI-235;CDE;Cretu V.;15:15;16:45;Impară;3-3;Marți
@@ -31,7 +31,9 @@ TI-235;MN;Patiuc V.;13:30;15:00;Pară;3-3;Vineri
 TI-235;Filozofia;Antoci A.;15:15;16:45;Pară;3-3;Vineri
 TI-231;CDE;Lupan C.;8:00;9:30;Impară;3-420;Luni
 TI-231;CDE;Lupan C.;9:45;11:15;Impară;3-420;Luni
-TI-231;Ed. Fizica;-;11:30;13:00;Impară;Sala de forță;Luni
+TI-231;POO;Coseru C.;8:00;9:30;Impară;3-114;Luni
+TI-231;POO;Coseru C.;9:45;11:15;Impară;3-114;Luni
+TI-231;Ed. Fizica;-;11:30;13:00;Impară;Stadion;Luni
 TI-231;CDE;Cretu V.;15:15;16:45;Impară;3-3;Marți
 TI-231;ASDN;Turcan A.;17:00;18:30;Impară;3-3;Marți
 TI-231;POO;Gincu S.;18:45;20:15;Impară;3-3;Marți
@@ -42,9 +44,12 @@ TI-231;APA;Coseru C.;8:00;9:30;Impară;3-513;Joi
 TI-231;POO;Coseru C.;9:45;11:15;Impară;3-607;Joi
 TI-231;ASDN;Turcan A.;11:30;13:00;Impară;3-414;Joi
 TI-231;ASDN;Ursu A.;9:45;11:15;Impară;3-516;Vineri
+TI-231;MN;Patiuc V.;9:45;11:15;Impară;3-503;Vineri
 TI-231;APA;Bagrin V.;11:30;13:00;Impară;3-3;Vineri
 TI-231;MN;Patiuc V.;13:30;15:00;Impară;3-3;Vineri
 TI-231;Filozofia;Antoci A.;15:15;16:45;Impară;3-3;Vineri
+TI-231;CDE;Lupan C.;8:00;9:30;Pară;3-420;Luni
+TI-231;CDE;Lupan C.;9:45;11:15;Pară;3-420;Luni
 TI-231;POO;Coseru C.;8:00;9:30;Pară;3-114;Luni
 TI-231;POO;Coseru C.;9:45;11:15;Pară;3-114;Luni
 TI-231;CDE;Cretu V.;13:30;15:00;Pară;3-3;Marți
@@ -57,6 +62,7 @@ TI-231;Dreptul;Ursu V.;13:30;15:00;Pară;3-3;Miercuri
 TI-231;APA;Coseru C.;8:00;9:30;Pară;3-513;Joi
 TI-231;POO;Coseru C.;9:45;11:15;Pară;3-607;Joi
 TI-231;MN;Patiuc V.;9:45;11:15;Pară;3-503;Vineri
+TI-231;ASDN;Ursu A.;9:45;11:15;Pară;3-516;Vineri
 TI-231;APA;Bagrin V.;11:30;13:00;Pară;3-3;Vineri
 TI-231;MN;Patiuc V.;13:30;15:00;Pară;3-3;Vineri
 TI-231;Filozofia;Antoci A.;15:15;16:45;Pară;3-3;Vineri
@@ -74,7 +80,7 @@ TI-232;IAFPS;Bagrin V.;9:45;11:15;Impară;3-512;Vineri
 TI-232;APA;Bagrin V.;11:30;13:00;Impară;3-3;Vineri
 TI-232;MN;Patiuc V.;13:30;15:00;Impară;3-3;Vineri
 TI-232;Filozofia;Antoci A.;15:15;16:45;Impară;3-3;Vineri
-TI-232;Ed. Fizica;-;9:45;11:15;Pară;Sala de forță;Luni
+TI-232;Ed. Fizica;-;9:45;11:15;Pară;Stadion;Luni
 TI-232;POO;Coseru C.;11:30;13:00;Pară;3-518;Luni
 TI-232;MN;Patiuc V.;13:30;15:00;Pară;3-214;Luni
 TI-232;CDE;Cretu V.;13:30;15:00;Pară;3-3;Marți
@@ -115,7 +121,7 @@ TI-233;POO;Gincu S.;18:45;20:15;Pară;3-3;Marți
 TI-233;Dreptul;Ursu V.;13:30;15:00;Pară;3-3;Miercuri
 TI-233;Filozofia;Antoci A.;15:15;16:45;Pară;3-312;Miercuri
 TI-233;IAFPS;Cebotari D.;17:00;18:30;Pară;3-512;Miercuri
-TI-233;Ed. Fizica;-;15:15;16:45;Pară;Sala de forță;Joi
+TI-233;Ed. Fizica;-;15:15;16:45;Pară;Stadion;Joi
 TI-233;POO;Cebotari D.;17:00;18:30;Pară;3-402;Joi
 TI-233;POO;Cebotari D.;18:45;20:15;Pară;3-501;Joi
 TI-233;APA;Scrob S.;9:45;11:15;Pară;3-114;Vineri
@@ -147,7 +153,7 @@ TI-234;POO;Gincu S.;18:45;20:15;Pară;3-3;Marți
 TI-234;POO;Lisnic I.;11:30;13:00;Pară;3-114;Miercuri
 TI-234;Dreptul;Ursu V.;13:30;15:00;Pară;3-3;Miercuri
 TI-234;CDE;Litra D.;15:15;16:45;Pară;3-420;Miercuri
-TI-234;Ed. Fizica;-;13:30;15:00;Pară;Sala de forță;Joi
+TI-234;Ed. Fizica;-;13:30;15:00;Pară;Stadion;Joi
 TI-234;APA;Lisnic I.;15:15;16:45;Pară;3-114;Joi
 TI-234;IAFPS;Lisnic I.;17:00;18:30;Pară;3-114;Joi
 TI-234;APA;Bagrin V.;11:30;13:00;Pară;3-3;Vineri
@@ -156,7 +162,7 @@ TI-234;Filozofia;Antoci A.;15:15;16:45;Pară;3-3;Vineri
 TI-236;POO;Lisnic I.;8:00;9:30;Impară;3-516;Luni
 TI-236;Filozofia;Antoci A.;9:45;11:15;Impară;3-312;Luni
 TI-236;POO;Lisnic I.;11:30;13:00;Impară;3-513;Luni
-TI-236;Ed. Fizica;-;13:30;15:00;Impară;Sala de forță;Marți
+TI-236;Ed. Fizica;-;13:30;15:00;Impară;Stadion;Marți
 TI-236;CDE;Cretu V.;15:15;16:45;Impară;3-3;Marți
 TI-236;ASDN;Turcan A.;17:00;18:30;Impară;3-3;Marți
 TI-236;POO;Gincu S.;18:45;20:15;Impară;3-3;Marți

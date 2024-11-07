@@ -3,7 +3,6 @@ from models import Schedule
 from search import search_schedules
 from csv_loader import load_schedule_from_csv
 
-# Încărcați programul din fișierul CSV
 schedules = load_schedule_from_csv("db.csv")
 
 def main(page: ft.Page):
@@ -12,13 +11,12 @@ def main(page: ft.Page):
     subject_input = ft.TextField(label="Materie", width=200)
     teacher_input = ft.TextField(label="Profesor", width=200)
 
-    # Aranjarea câmpurilor pentru materie și profesor pe același rând
     input_row = ft.Row(controls=[subject_input, teacher_input], spacing=10)
 
     group_options = ["TI-231", "TI-232", "TI-233", "TI-234", "TI-235", "TI-236"]
     selected_groups = []
     
-    group_input = ft.Row()  
+    group_input = ft.Row()
     for group in group_options:
         cb = ft.Checkbox(label=group, value=False)
         selected_groups.append(cb)
@@ -27,7 +25,7 @@ def main(page: ft.Page):
     week_type_options = ["Pară", "Impară"]
     selected_week_types = []
     
-    week_type_input = ft.Row()  
+    week_type_input = ft.Row()
     for week_type in week_type_options:
         cb = ft.Checkbox(label=week_type, value=False)
         selected_week_types.append(cb)
@@ -36,18 +34,36 @@ def main(page: ft.Page):
     day_options = ["Luni", "Marți", "Miercuri", "Joi", "Vineri"]
     selected_days = []
     
-    day_input = ft.Row() 
+    day_input = ft.Row()
     for day in day_options:
         cb = ft.Checkbox(label=day, value=False)
         selected_days.append(cb)
         day_input.controls.append(cb)
 
-    search_button = ft.ElevatedButton(text="Caută", on_click=lambda e: search_schedules_func())
-    
-    results_container = ft.Column()
+    def close_dialog(e):
+        if page.dialog:
+            page.dialog.open = False
+            page.dialog = None  # Eliminăm referința la dialog
+            page.update()
+
+    def reset_inputs():
+        subject_input.value = ""
+        teacher_input.value = ""
+        for cb in selected_groups:
+            cb.value = False
+        for cb in selected_week_types:
+            cb.value = False
+        for cb in selected_days:
+            cb.value = False
+        page.update()
 
     def search_schedules_func():
-        results_container.controls.clear()
+        if page.dialog:  # Închidem dialogul existent, dacă există
+            page.dialog.open = False
+            page.dialog = None
+            page.update()
+
+        results_container = ft.Column()  # Cream un nou container pentru rezultate
 
         selected_groups_values = [cb.label for cb in selected_groups if cb.value]
         selected_week_types_values = [cb.label for cb in selected_week_types if cb.value]
@@ -63,7 +79,9 @@ def main(page: ft.Page):
         )
 
         if not search_results:
-            results_container.controls.append(ft.Text("Nu s-au găsit rezultate", color="red", size=20, weight="bold"))
+            results_container.controls.append(
+                ft.Text("Nu s-au găsit rezultate", color="red", size=20, weight="bold")
+            )
         else:
             for schedule in search_results:
                 result_row = ft.Row([
@@ -78,10 +96,23 @@ def main(page: ft.Page):
                 ])
                 results_container.controls.append(result_row)
 
+        dialog = ft.AlertDialog(
+            title=ft.Row([
+                ft.Text("Rezultatele căutării", weight="bold", expand=True),
+                ft.IconButton(icon=ft.icons.CLOSE, on_click=close_dialog)
+            ]),
+            content=results_container,
+        )
+        page.dialog = dialog  # Setăm dialogul în `page`
+        dialog.open = True
         page.update()
 
+        reset_inputs()  # Resetăm intrările după afișarea dialogului
+
+    search_button = ft.ElevatedButton(text="Caută", on_click=lambda e: search_schedules_func())
+
     page.add(
-        input_row,  # Adăugăm rândul cu câmpurile pentru materie și profesor
+        input_row,
         ft.Text("Selectați grupa:"),
         group_input,
         ft.Text("Selectați tipul săptămânii:"),
@@ -89,7 +120,6 @@ def main(page: ft.Page):
         ft.Text("Selectați ziua:"),
         day_input,
         search_button,
-        results_container,
     )
 
 ft.app(target=main)
