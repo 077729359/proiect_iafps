@@ -40,12 +40,6 @@ def main(page: ft.Page):
         selected_days.append(cb)
         day_input.controls.append(cb)
 
-    def close_dialog(e):
-        if page.dialog:
-            page.dialog.open = False
-            page.dialog = None  # Eliminăm referința la dialog
-            page.update()
-
     def reset_inputs():
         subject_input.value = ""
         teacher_input.value = ""
@@ -58,12 +52,10 @@ def main(page: ft.Page):
         page.update()
 
     def search_schedules_func():
-        if page.dialog:  # Închidem dialogul existent, dacă există
-            page.dialog.open = False
-            page.dialog = None
-            page.update()
+        
+        page.overlay.clear()  
 
-        results_container = ft.Column()  # Cream un nou container pentru rezultate
+        results_container = ft.Column()
 
         selected_groups_values = [cb.label for cb in selected_groups if cb.value]
         selected_week_types_values = [cb.label for cb in selected_week_types if cb.value]
@@ -96,18 +88,36 @@ def main(page: ft.Page):
                 ])
                 results_container.controls.append(result_row)
 
+        
+        results_count = len(search_results)
+        list_height = 200 if results_count < 10 else 500  
+        
+
+        scrollable_content = ft.ListView(
+            controls=results_container.controls,
+            expand=True,  
+        )
+
+       
+        scrollable_container = ft.Container(
+            content=scrollable_content,
+            height=list_height,  
+            width=1200,  
+            padding=3
+        )
+
         dialog = ft.AlertDialog(
             title=ft.Row([
                 ft.Text("Rezultatele căutării", weight="bold", expand=True),
-                ft.IconButton(icon=ft.icons.CLOSE, on_click=close_dialog)
+              
             ]),
-            content=results_container,
+            content=scrollable_container,  
         )
-        page.dialog = dialog  # Setăm dialogul în `page`
+        page.overlay.append(dialog)  
         dialog.open = True
         page.update()
 
-        reset_inputs()  # Resetăm intrările după afișarea dialogului
+        reset_inputs()  
 
     search_button = ft.ElevatedButton(text="Caută", on_click=lambda e: search_schedules_func())
 
@@ -123,3 +133,8 @@ def main(page: ft.Page):
     )
 
 ft.app(target=main)
+
+
+
+
+
